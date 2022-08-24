@@ -9,7 +9,7 @@ const ItemListContainer = ({ title }) => {
         <article className="bodyShop-container__text-box">
           <h1>{title}</h1>
           <p>
-            Es hora que el basquetbol esté en tu piel !!!
+            Es hora de que el basquetbol esté en tu piel !!!
           </p>
           <button className="button-primary">Comprar</button>
         </article>
