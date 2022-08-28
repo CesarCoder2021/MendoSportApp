@@ -1,0 +1,45 @@
+.card {
+    width: 20rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+.card__contador {
+    width: 80%;
+    height: calc(with*2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__contador__boton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.card__contador__display {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 1rem 0 1rem;
+}
+
+.card__botonCarrito {
+    width: 80%;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 400;
+    background-color: #C73b0b;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+

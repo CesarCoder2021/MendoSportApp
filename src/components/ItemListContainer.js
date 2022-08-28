@@ -1,8 +1,13 @@
 import React from 'react';
-
+import ItemCount from './ItemCount';
 import './style.css';
 
 const ItemListContainer = ({ title }) => {
+
+  const onAdd = (qty) => {
+      alert ("Usted seleccionó " + qty + " productos")
+    }
+
   return (
     <section className="bodyShop">
       <div className="bodyShop-container">
@@ -14,6 +19,7 @@ const ItemListContainer = ({ title }) => {
           <button className="button-primary">Comprar</button>
         </article>
       </div>
+      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
     </section>
   );
 };
