@@ -1,9 +1,9 @@
 import React from 'react';
 import ItemListContainer from './components/ItemListContainer.js';
 import NavBar from './components/NavBar.js';
-import './components/style.css';
+import './components/css/style.css';
 
-export default function App() {
+const App = () => {
   return (
     <>
       <NavBar />
@@ -11,3 +11,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;

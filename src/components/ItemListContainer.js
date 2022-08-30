@@ -1,27 +1,24 @@
-import React from 'react';
-import ItemCount from './ItemCount';
-import './style.css';
+import React, {useState, useEffect} from "react";
+import desafio from "../utils/promesa";
+import productos from "../utils/productos.js";
+import ItemList from "./ItemList";
 
-const ItemListContainer = ({ title }) => {
+function ItemListContainer(props) {
 
-  const onAdd = (qty) => {
-      alert ("Usted seleccionó " + qty + " productos")
-    }
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    desafio(productos)
+      .then(result => setProducts(result))
+      .catch(err => console.log(err))
+  })
 
   return (
-    <section className="bodyShop">
-      <div className="bodyShop-container">
-        <article className="bodyShop-container__text-box">
-          <h1>{title}</h1>
-          <p>
-            Es hora de que el basquetbol esté en tu piel !!!
-          </p>
-          <button className="button-primary">Comprar</button>
-        </article>
-      </div>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
-    </section>
+    <div>
+      <h1>{props.greetings}</h1>
+      <ItemList items={products} />
+    </div>
   );
-};
+}
 
 export default ItemListContainer;

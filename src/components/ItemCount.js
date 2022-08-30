@@ -1,38 +1,42 @@
-import React, { useState } from "react";
-import "./styleItemCount.css";
+import {useState} from "react";
+import "./css/itemCount.css"
 
-function ItemCount ({stock = 0, initial = 1, onAdd}) {
-    const [count, setCount] = useState (0);
+function ItemCount(props) {
+  const[count, setCount] = useState(props.min);
 
-    const aumentar = () => {
-        if (count < stock) {
-            setCount (count + 1)
-        }
-    }
+  function disminuir() {
+    if(count !== props.min) {
+      setCount(count-1)
+    } 
+  }
 
-    const disminuir = () => {
-        if (count > initial) {
-            setCount (count - 1)
-        }
-    }
+  function aumentar() {
+    if(count !== props.stock) {
+      setCount(count+1)
+    } 
+  }
 
-    return (
-        <span className="card">
-            <div className="card__contador">
-                <button className="card__contador__boton" onClick= { aumentar }>
-                    +
-                </button>
-                <p className="card__contador__display"> { count } </p>
-                <button className="card__contador__boton" onClick={ disminuir}>
-                    -
-                </button>
-            </div>
-            <button className="card__botonCarrito" onClick={ () => onAdd (count) }>
-                Añadir al carrito
+  function onAdd() {
+    alert(`¡Se agregaron al carrito ${count} unidades!`);
+  }
+
+  return (
+    <>
+        <div className="contador">
+            <button className="contador__boton" onClick={disminuir}>-</button>
+            <p>{count}</p>
+            <button className="contador__boton" onClick={aumentar}>+</button>
+        </div>
+        <div>
+            <button
+                className="contador__botonCarrito"
+                type="submit"
+                onClick={onAdd}>
+                Agregar al carrito
             </button>
-        </span>
-        
-    );
-};
+        </div>
+    </>
+);
+}
 
 export default ItemCount;
