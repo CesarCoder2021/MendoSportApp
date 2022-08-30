@@ -7,7 +7,7 @@ function Item(props) {
     <div className="card">
       <div>
         <div className="foto">
-            <img src={props.image} alt=""/>
+            <img src={process.env.PUBLIC_URL + props.image} alt=""/>
           <img src={props.name} alt="" />
         </div>
         <div>
@@ -19,7 +19,7 @@ function Item(props) {
         </div>
       </div>
       <div>
-        <ItemCount stock={props.stock} min={props.initial}/>
+        <ItemCount stock={props.stock} min={props.min}/>
       </div>
     </div>
   );
