@@ -5,7 +5,7 @@
         stock: 7,
         cost: 25000,
         description: "Balón Molten de cuero, número 5",
-        image: ["/public/img/BalonMolten.jpg"],
+        image: "/img/BalonMolten.jpg",
         categoryId: 1,
         initial: 1
     },
@@ -15,7 +15,7 @@
         stock: 5,
         cost: 26000,
         description: "Balón Molten de cuero, número 6",
-        image: ["/public/img/BalonMolten.jpg"],
+        image: "/img/BalonMolten.jpg",
         categoryId: 1,
         initial: 1
     },
@@ -25,7 +25,7 @@
         stock: 5,
         cost: 27000,
         description: "Balón Molten de cuero, número 7",
-        image: ["/public/img/BalonMolten.jpg"],
+        image: "/img/BalonMolten.jpg",
         categoryId: 1,
         initial: 1
     },
@@ -35,7 +35,7 @@
         stock: 5,
         cost: 20000,
         description: "Calzado de basquetbol especial marca Adidas, todos los números",
-        image: ["/public/img/CalzadoAdidas.jpg"],
+        image: "/img/CalzadoAdidas.jpg",
         categoryId: 2,
         initial: 1
     },
@@ -45,7 +45,7 @@
         stock: 5,
         cost: 21000,
         description: "Calzado de basquetbol especial marca Topper, todos los números",
-        image: ["/public/img/CalzadoTopper.jpg"],
+        image: "/img/CalzadoTopper.jpg",
         categoryId: 2,
         initial: 1
     },
@@ -55,7 +55,7 @@
         stock: 5,
         cost: 22000,
         description: "Calzado de basquetbol especial marca Nike, todos los números",
-        image: ["/public/img/CalzadoNike.jpg"],
+        image: "/img/CalzadoNike.jpg",
         categoryId: 2,
         initial: 1
     },
@@ -65,7 +65,7 @@
         stock: 5,
         cost: 1000,
         description: "Muñequera superabsorbente, marca Spalding",
-        image: ["/public/img/MuñequeraSpalding.jpg"],
+        image: "/img/MuñequeraSpalding.jpg",
         categoryId: 3,
         initial: 1
     },
@@ -75,7 +75,7 @@
         stock: 5,
         cost: 3000,
         description: "Rodillera de neoprene y acolchado, marca McDavid",
-        image: ["/public/img/RodilleraMcDavid.jpg"],
+        image: "/img/RodilleraMcDavid.jpg",
         categoryId: 3,
         initial: 1
     },
@@ -85,7 +85,7 @@
         stock: 5,
         cost: 4000,
         description: "Vincha absorbente marca Nike",
-        image: ["/public/img/VinchaNike.jpg"],
+        image: "/img/VinchaNike.jpg",
         categoryId: 3,
         initial: 1
     }

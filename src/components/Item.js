@@ -8,13 +8,11 @@ function Item(props) {
       <div>
         <div className="foto">
             <img src={process.env.PUBLIC_URL + props.image} alt=""/>
-          <img src={props.name} alt="" />
         </div>
         <div>
           <div>
             <h3>{props.name}</h3>
           </div>
-          <p>{props.description}</p>
           <p>$ {props.cost}</p>
         </div>
       </div>
