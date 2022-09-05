@@ -90,57 +90,8 @@
     line-height: 17px;
   }
 
-  /* Estilo Item */
+  /* Estilo body */
 
-  .bodyShop {
-    width: 100%;
-    height: 100vh;
-    background-position: 67%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .bodyShop-slide-1 {
-    background-image: url(https://www.lifeder.com/medidas-cancha-basquetbol/);
-  }
-  
-  .bodyShop-container {
-    display: grid;
-    grid-template: 1fr 2fr 1fr / 0.5fr 2fr 0.5fr;
-    height: 100%;
-    background-image: url(https://st2.depositphotos.com/3725083/8633/i/600/depositphotos_86337698-stock-photo-basketball-arena.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  
-  .bodyShop-container__text-box {
-    grid-column: 2;
-    grid-row: 2;
-    color: black;
-    text-align: center;
-    align-self: center;
-  }
-  
-  .bodyShop-container__text-box h1 {
-    font-size: 3.4rem;
-    font-weight: 700;
-  }
-  
-  .bodyShop-container__text-box p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin: 30px auto;
-    max-width: 360px;
-  }
-  
-  .button-primary {
-    background-color: #C73b0b;
-    border: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    margin: 20px auto;
-    width: 10rem;
-    height: 3rem;
-    cursor: pointer;
-    color: white;
+  body {
+    background-color: #e3e3e3;
   }

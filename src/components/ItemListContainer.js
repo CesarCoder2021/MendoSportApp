@@ -15,9 +15,8 @@ function ItemListContainer(props) {
   })
 
   return (
-    <div className="productos">
-      <h1>{props.greetings}</h1>
-      <ItemList items={products} />
+    <div>
+      <ItemList items={productos} />
     </div>
   );
 }
