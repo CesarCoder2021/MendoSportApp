@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
-import desafio from "../utils/promesa";
+import {useState, useEffect} from "react";
+import desafio from "../utils/promesa.js";
 import productos from "../utils/productos.js";
-import ItemList from "./ItemList";
+import ItemList from "./ItemList.js";
 import "./css/itemListContainer.css"
 import { useParams } from "react-router-dom";
 
@@ -12,11 +12,11 @@ function ItemListContainer(props) {
 
   useEffect(() => {
     if (id) {
-      desafio(2000, productos.filter (items => items.categoryId === id))
+      desafio(productos.filter (item => item.categoryId == id))
         .then(result => setProducts(result))
         .catch(err => console.log(err))      
     } else {
-      desafio(2000, productos)
+      desafio(productos)
         .then(result => setProducts(result))
         .catch(err => console.log(err))
     }
@@ -24,7 +24,7 @@ function ItemListContainer(props) {
 
   return (
     <div>
-      <ItemList items={productos} />
+      <ItemList items={products} />
     </div>
   );
 }

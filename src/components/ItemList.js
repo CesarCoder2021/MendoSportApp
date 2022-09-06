@@ -14,6 +14,7 @@ function ItemList(props) {
           {items.map((item) => (
             <Item
               key={item.id}
+              id={item.id}
               image={item.image}
               name={item.name}
               cost={item.cost}

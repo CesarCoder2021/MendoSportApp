@@ -20,4 +20,7 @@
     height: 250px;
     background-color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
 }

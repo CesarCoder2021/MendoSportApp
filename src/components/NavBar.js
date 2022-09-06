@@ -13,9 +13,9 @@ const NavBar = ({ background }) => {
           
         <nav>
           <ul className="nav-container">
-          <Link className='linkNav' to="/category/:1">Balones</Link>
-          <Link className='linkNav' to="/category/:2">Calzados</Link>
-          <Link className='linkNav' to="/category/:3">Accesorios</Link>
+          <Link className='linkNav' to="/category/1">Balones</Link>
+          <Link className='linkNav' to="/category/2">Calzados</Link>
+          <Link className='linkNav' to="/category/3">Accesorios</Link>
           </ul>
         </nav>
 
