@@ -35,16 +35,13 @@
     align-items: center;
   }
   
-  .nav-container li {
-    margin: 0 10px;
-    list-style: none;
-  }
-  
-  .nav-container li a {
+  .linkNav {
     text-decoration: none;
     color: white;
     font-weight: 500;
     font-size: 18px;
+    margin: 0 10px;
+    list-style: none;
   }
   
   .background--black {
