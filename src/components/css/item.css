@@ -1,7 +1,7 @@
 .card {
     background-color: white;
     width: 25%;
-    height: 30rem;
+    height: 32rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,6 +14,11 @@
 .card:hover {
     box-shadow: 8px 8px 6px grey;
 }
+.card_contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .foto {
 
     width: 250px;
@@ -23,4 +28,20 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 2rem;
+    align-items: center;
 }
+.detalle {
+    width: 6rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.detalle:hover{
+    background-color: #e3e3e3;
+    font-weight: 500;
+}
+

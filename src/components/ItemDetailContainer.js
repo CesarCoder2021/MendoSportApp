@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail";
 import productos from "../utils/productos";
 import desafio from "../utils/promesa";
 import { useParams } from "react-router-dom";
+import "./css/itemDetailConteiner.css";
 
 
 function ItemDetailContainer() {
@@ -11,7 +12,7 @@ function ItemDetailContainer() {
   const { id } = useParams ();
 
   useEffect(() => {
-    desafio(2000, productos.find (item => item.id == id))
+    desafio(productos.find (item => item.id == id))
       .then(result => setOneProduct(result))
       .catch(err => console.log(err))
   }, [id]);
@@ -20,7 +21,7 @@ function ItemDetailContainer() {
     oneProduct ? <ItemDetail item={oneProduct}/> :
       <div>
         <div></div>
-        <p>Cargando</p>
+        <p className="cargando">Cargando ... </p>
       </div>
   );
 };

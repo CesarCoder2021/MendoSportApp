@@ -7,10 +7,10 @@ function Item(props) {
   return (
 
     <div className="card">
-      <div>
+      <div className="card_contenido">
         <div className="foto">
             <img src={process.env.PUBLIC_URL + props.image} alt=""/>
-            <Link to={`/item/${props.id}`}>Detalle ... </Link>
+            <Link className="detalle" to={`/item/${props.id}`}>Ver detalle ... </Link>
         </div>
         <div>
           <div>
