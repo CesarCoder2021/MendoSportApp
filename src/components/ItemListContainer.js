@@ -12,7 +12,7 @@ function ItemListContainer(props) {
 
   useEffect(() => {
     if (id) {
-      desafio(productos.filter (item => item.categoryId == id))
+      desafio(productos.filter (item => item.categoryId === id))
         .then(result => setProducts(result))
         .catch(err => console.log(err))      
     } else {

@@ -12,7 +12,7 @@ function ItemDetailContainer() {
   const { id } = useParams ();
 
   useEffect(() => {
-    desafio(productos.find (item => item.id == id))
+    desafio(productos.find (item => item.id === id))
       .then(result => setOneProduct(result))
       .catch(err => console.log(err))
   }, [id]);

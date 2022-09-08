@@ -6,7 +6,7 @@
         cost: 25000,
         description: "Balón Molten de cuero, número 5",
         image: "/img/BalonMolten.jpg",
-        categoryId: 1,
+        categoryId: "1",
         initial: 1
     },
     {
@@ -16,7 +16,7 @@
         cost: 26000,
         description: "Balón Molten de cuero, número 6",
         image: "/img/BalonMolten.jpg",
-        categoryId: 1,
+        categoryId: "1",
         initial: 1
     },
     {
@@ -26,7 +26,7 @@
         cost: 27000,
         description: "Balón Molten de cuero, número 7",
         image: "/img/BalonMolten.jpg",
-        categoryId: 1,
+        categoryId: "1",
         initial: 1
     },
     {
@@ -36,7 +36,7 @@
         cost: 20000,
         description: "Calzado de basquetbol especial marca Adidas, todos los números",
         image: "/img/CalzadoAdidas.jpg",
-        categoryId: 2,
+        categoryId: "2",
         initial: 1
     },
     {
@@ -46,7 +46,7 @@
         cost: 21000,
         description: "Calzado de basquetbol especial marca Topper, todos los números",
         image: "/img/CalzadoTopper.jpg",
-        categoryId: 2,
+        categoryId: "2",
         initial: 1
     },
     {
@@ -56,7 +56,7 @@
         cost: 22000,
         description: "Calzado de basquetbol especial marca Nike, todos los números",
         image: "/img/CalzadoNike.jpg",
-        categoryId: 2,
+        categoryId: "2",
         initial: 1
     },
     {
@@ -66,7 +66,7 @@
         cost: 1000,
         description: "Muñequera superabsorbente, marca Spalding",
         image: "/img/MuñequeraSpalding.jpg",
-        categoryId: 3,
+        categoryId: "3",
         initial: 1
     },
     {
@@ -76,7 +76,7 @@
         cost: 3000,
         description: "Rodillera de neoprene y acolchado, marca McDavid",
         image: "/img/RodilleraMcDavid.jpg",
-        categoryId: 3,
+        categoryId: "3",
         initial: 1
     },
     {
@@ -86,7 +86,7 @@
         cost: 4000,
         description: "Vincha absorbente marca Nike",
         image: "/img/VinchaNike.jpg",
-        categoryId: 3,
+        categoryId: "3",
         initial: 1
     }
 ];
