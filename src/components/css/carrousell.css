@@ -1,0 +1,31 @@
+.fotoHead {
+    background-image: url("/public/img/carrousell/bbHead3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.tituloHead {
+    color: white;
+    font-size: 2rem;
+    text-align: end;
+    padding: 8rem 2rem 0 0;
+}
+.botonHead {
+    margin: 0 4rem 10rem 0;
+    width: 10rem;
+    height: 2rem;
+    background-color: #C73b0b;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    
+}

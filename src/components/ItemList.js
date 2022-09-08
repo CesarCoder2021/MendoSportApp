@@ -9,7 +9,6 @@ function ItemList(props) {
   return(
     <div>
       <div className="cabecera">
-        <h2 className="cabecera__titulo" id="products">Para seguir sintiendo el basquetbol en la piel!</h2>
         <div className="container">
           {items.map((item) => (
             <Item
