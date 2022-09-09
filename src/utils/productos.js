@@ -88,6 +88,36 @@
         image: "/img/VinchaNike.jpg",
         categoryId: "3",
         initial: 1
+    },
+    {
+        id: 10,
+        name: "Camiseta NBA",
+        stock: 8,
+        cost: 1500,
+        description: "Camisetas de todos los equipos de la NBA",
+        image: "/img/CamisetaNBA.jpg",
+        categoryId: "4",
+        initial: 1
+    },
+    {
+        id: 11,
+        name: "Camiseta LNB (Arg)",
+        stock: 10,
+        cost: 1600,
+        description: "Camiseta de todos los equipos de la Liga Nacional de Basquetbol",
+        image: "/img/CamisetaLNB.jpg",
+        categoryId: "4",
+        initial: 1
+    },
+    {
+        id: 12,
+        name: "Camiseta Selección Argentina",
+        stock: 5,
+        cost: 1000,
+        description: "Muñequera superabsorbente, marca Spalding",
+        image: "/img/CamisetaSeleNac.jpg",
+        categoryId: "4",
+        initial: 1
     }
 ];
 
