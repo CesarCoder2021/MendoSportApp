@@ -1,26 +1,38 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./css/itemCount.css"
+import {Link} from "react-router-dom";
 
 function ItemCount(props) {
   const[count, setCount] = useState(props.min);
+  const[compra, setCompra] = useState(false)
+
+  useEffect(() => {
+    setCount(props.min)
+  }, [props.min])
 
   function disminuir() {
     if(count !== props.min) {
       setCount(count-1)
+    } else {
+      alert(`¡No puedes agregar menos de ${props.min} unidad!`);
     } 
   }
 
   function aumentar() {
     if(count !== props.stock) {
       setCount(count+1)
-    } 
+    } else {
+      alert(`¡No puedes agregar más de ${props.stock} unidades!`);
+    }
   }
 
   function onAdd() {
-    alert(`¡Se agregaron al carrito ${count} unidades!`);
+    alert(`¡Se agregaron al carrito ${count} unidades!`)
+    setCompra(true);
   }
 
   return (
+    compra == false ?
     <>
         <div className="contador">
             <button className="contador__boton" onClick={disminuir}>-</button>
@@ -31,11 +43,20 @@ function ItemCount(props) {
             <button
                 className="contador__botonCarrito"
                 type="submit"
-                onClick={onAdd}>
-                Agregar al carrito
+                onClick={onAdd}
+                >Agregar al carrito
             </button>
         </div>
     </>
+    :
+    <Link to={'/cart'}>
+        <button
+          className="contador__botonCarrito-ver"
+          type="submit"
+        >
+          Ver en el carrito
+        </button>
+      </Link>
 );
 }
 

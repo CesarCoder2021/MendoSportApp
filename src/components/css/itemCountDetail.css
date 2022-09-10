@@ -1,4 +1,4 @@
-.contador {
+.contadorDetail {
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -8,7 +8,7 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
-.contador__boton {
+.contadorDetail__boton {
     width: 2rem;
     height: 2rem;
     background-color: #e3e3e3;
@@ -17,10 +17,10 @@
     font-size: 1.5rem;
     font-weight: 400;
 }
-.contador__boton:active {
+.contadorDetail__boton:active {
     background-color: #a3a3a3;
 }
-.contador__botonCarrito {
+.contadorDetail__botonCarrito {
     width: 10rem;
     height: 2rem;
     background-color: #C73b0b;
@@ -29,8 +29,9 @@
     color: white;
     font-weight: 500;
     font-size: 1rem;
+    margin-top: 1rem;
 }
-.contador__botonCarrito-ver {
+.contadorDetail__botonCarrito-ver {
     width: 100%;
     height: 4rem;
     background-color: white;

@@ -114,7 +114,7 @@
         name: "Camiseta Selección Argentina",
         stock: 5,
         cost: 1000,
-        description: "Muñequera superabsorbente, marca Spalding",
+        description: "Camiseta original de la Selección Argentina de Basquetbol",
         image: "/img/CamisetaSeleNac.jpg",
         categoryId: "4",
         initial: 1

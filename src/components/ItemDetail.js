@@ -1,8 +1,8 @@
-// import React, {useState} from 'react'
-import ItemCount from "./ItemCount";
+// import {useState} from 'react'
+import ItemCountDetail from "./ItemCountDetail";
 import React from "react";
 import "./css/itemDetail.css";
-
+// import { Link } from "react-router-dom";
 
 function ItemDetail(props) {
 
@@ -31,9 +31,17 @@ function ItemDetail(props) {
             <div>
               <h3>Precio</h3>
               <p>{props.item.cost}</p>
-              <div className="contadorDetail">
-                <ItemCount stock={props.item.stock} min={props.item.initial}/>
-              </div>
+            
+              <div>
+                <div>
+                    <ItemCountDetail 
+                    stock={props.item.stock} 
+                    min={props.item.initial} 
+                    />
+                </div>
+
+            </div>
+
             </div>
           </div>
         </div>
