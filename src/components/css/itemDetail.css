@@ -9,7 +9,7 @@
 }
 .contadorDetail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-items: center;
     align-items: center;
 }

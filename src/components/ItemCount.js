@@ -1,10 +1,12 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import "./css/itemCount.css"
 import {Link} from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 function ItemCount(props) {
   const[count, setCount] = useState(props.min);
-  const[compra, setCompra] = useState(false)
+  const[compra, setCompra] = useState(false);
+  const test = useContext(CartContext);
 
   useEffect(() => {
     setCount(props.min)
@@ -29,10 +31,11 @@ function ItemCount(props) {
   function onAdd() {
     alert(`¡Se agregaron al carrito ${count} unidades!`)
     setCompra(true);
+    test.addItem (props, count);
   }
 
   return (
-    compra == false ?
+    compra === false ?
     <>
         <div className="contador">
             <button className="contador__boton" onClick={disminuir}>-</button>
