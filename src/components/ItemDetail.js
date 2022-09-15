@@ -35,6 +35,7 @@ function ItemDetail(props) {
               <div>
                 <div>
                     <ItemCountDetail 
+                    item={props.item}
                     stock={props.item.stock} 
                     min={props.item.initial} 
                     />

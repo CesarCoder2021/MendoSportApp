@@ -27,7 +27,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 90%;
 }
 .carritoLinea{
     display: flex;
@@ -69,7 +69,7 @@
 }
 
 .limpiarSeguir {
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     background-color: white;
     display: flex;
