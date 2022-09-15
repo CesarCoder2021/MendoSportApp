@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 function ItemCount(props) {
+  
   const[count, setCount] = useState(props.min);
   const[compra, setCompra] = useState(false);
   const test = useContext(CartContext);
@@ -31,7 +32,7 @@ function ItemCount(props) {
   function onAdd() {
     alert(`¡Se agregaron al carrito ${count} unidades!`)
     setCompra(true);
-    test.addItem (props, count);
+    test.addItem (props.item, count);
   }
 
   return (

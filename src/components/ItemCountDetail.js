@@ -2,38 +2,38 @@ import {useContext, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import { CartContext } from "./CartContext";
 import "./css/itemCountDetail.css";
-import Item from "./Item";
+// import Item from "./Item";
 
-function ItemCountDetail(item) {
+function ItemCountDetail(props) {
 
-  const [countDetail, setCountDetail] = useState(1);
+  const [countDetail, setCountDetail] = useState(props.min);
   const [compra, setCompra] = useState(false)
   const test = useContext(CartContext);
 
   useEffect(() => {
-    setCountDetail(item.min)
-  }, [item.min])
+    setCountDetail(props.min)
+  }, [props.min])
 
   function disminuir() {
-    if (countDetail !== item.min) {
+    if (countDetail !== props.min) {
       setCountDetail(countDetail - 1)
     } else {
-      alert(`¡No puedes agregar menos de ${item.min} unidad!`);
+      alert(`¡No puedes agregar menos de ${props.min} unidad!`);
     }
   }
 
   function aumentar() {
-    if (countDetail !== item.stock) {
+    if (countDetail !== props.stock) {
       setCountDetail(countDetail + 1)
     } else {
-      alert(`¡No puedes agregar más de ${item.stock} unidades!`);
+      alert(`¡No puedes agregar más de ${props.stock} unidades!`);
     }
   }
 
-  function onAddDetail() {
+  function onAdd() {
     alert(`¡Se agregaron al carrito ${countDetail} unidades!`);
     setCompra(true);
-    test.addItem (item, countDetail);
+    test.addItem (props.item, countDetail);
   }
 
   return (
@@ -49,7 +49,7 @@ function ItemCountDetail(item) {
         <button
           className="contadorDetail__botonCarrito"  
           type="submit"
-          onClick={onAddDetail}
+          onClick={onAdd}
         >
           Agregar al carrito
         </button>

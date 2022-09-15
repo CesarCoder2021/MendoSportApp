@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import ItemCountDetail from "./ItemCountDetail";
 
 export const CartContext = createContext();
 
@@ -9,17 +8,33 @@ const CartContextProvider = ({children}) => {
 
     const addItem = (props, quantity) => {
         const itemForCart ={
-            ... props, ItemCountDetail
+            ...props, quantity
         }
-        setCartList([... cartList, itemForCart])
+        if (cartList.filter(elemento => elemento.id === props.id).length === 0) {
+        setCartList([...cartList, itemForCart])
+        } else {
+            let temporal = cartList.map((elemento) => {
+            if (elemento.id !== props.id) {
+                return elemento
+            } else {
+                return props 
+            }
+            })
+            setCartList (temporal)
+            alert ("Ya compró este producto");
+        }
     }
 
     const removeItem = (itemID) => {
         setCartList(cartList.filter(item => item.id !== itemID))
       }
 
+    const clearCart = () => {
+        setCartList([])
+      }
+
     return (
-        <CartContext.Provider value={{cartList, addItem, removeItem}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem, clearCart}}>
             {children}
         </CartContext.Provider>
     );
@@ -27,8 +42,3 @@ const CartContextProvider = ({children}) => {
 } 
 
 export default CartContextProvider;
-
-
-
-
-

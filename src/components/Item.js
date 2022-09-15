@@ -21,7 +21,7 @@ function Item(props) {
       </div>
       <div>
 
-        <ItemCount stock={props.stock} min={props.min}/>
+        <ItemCount item={props} stock={props.stock} min={props.min}/>
 
       </div>
     </div>
