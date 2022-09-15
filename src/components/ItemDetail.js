@@ -12,7 +12,7 @@ function ItemDetail(props) {
         <div className="contenedorDetail">
           <div>
             <img
-              src={props.item.image}
+              src={props.item.image} alt = " "
             />
             <h2>{props.item.name}</h2>
           </div>
