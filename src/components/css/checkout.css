@@ -1,0 +1,132 @@
+.checkFondo {
+    background-color: white;
+}
+.notaDePedido {
+    background-color: #e3e3e3;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 3px 3px 5px grey;
+    padding: 1rem;
+}
+.notaDePedido__titulo {
+    text-align: center;
+    color: #C73b0b;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.notaDePedido__formData {
+    width: 90%;
+    margin: 1rem auto;
+    color: #C73b0b;
+    font-size: 1rem;
+    margin: 1rem;
+}
+.notaDePedido__formData-input {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notaDePedido__formData-dato {
+    width: 70%;
+    height: 2rem;
+    background: none;
+    color: #C73b0b;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #C73b0b;
+    bottom: 0;
+}
+.notaDePedido__formData-etiqueta {
+    width: 30%;
+}
+
+.notaDePedido__detalle {
+    width: 100%;
+    text-align: center;
+    color: #C73b0b;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.totalCompra {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.totalCompra__titulo {
+    font-size: 1.2rem;
+}
+.totalCompra__valor {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.totalCompra__envioNo{
+    font-style: italic;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+.botonEnviarPedido {
+    background-color: #C73b0b;
+    width: 15rem;
+    height: 3rem;
+    border: 5px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.pedidoModifico {
+    color: #C73b0b;
+    text-align: center;
+    padding: 2rem;
+}
+.lineaProductoPedido {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+.lineaProductoPedido__nombre {
+    width: 30%;
+}
+.envio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+.botonQuitarPedido {
+    background-color: #C73b0b;
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+}
+.avisoFinal {
+    width: 100%;
+    font-size: 3rem;
+    color: #C73b0b;
+    font-weight: 700;
+    text-align: center;
+}
+.avisoFinal__bajada {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+    
+
+
+

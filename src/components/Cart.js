@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-// import ItemCount from "./ItemCount";
 import {Link} from "react-router-dom";
 import "../components/css/cart.css";
 
 const Cart = () => {
 
     const test = useContext(CartContext);
-    console.log (test);
     const [open, setOpen] = useState(true);
+    let subtotal = test.subtotal;
 
     return (
     <>
@@ -21,6 +20,7 @@ const Cart = () => {
                 >Cerrar Panel</button>
             </Link>
 
+        <div className="compraYTotal">
           <ul className="carrito_linea">
             {test.cartList.length === 0 &&
               <p className="carritoVacio">El carrito está vacío.</p>}
@@ -28,8 +28,8 @@ const Cart = () => {
             {test.cartList.map((item) => (
               <li className="itemCarrito" key={item.id}>
                 <div>
-                  <img
-                    src={item.image}
+                  <img width={100}
+                    src={item.image} alt= ""
                   />
                 </div>
   
@@ -43,7 +43,7 @@ const Cart = () => {
                 <p>${item.cost}</p>
                 <div className="qtyQuitar">
                   <p className="cantidad">Cantidad {item.quantity}</p>
-                  {/* <ItemCount stock={item.stock} min={item.min}/> */}
+
                   <div>
                     <button
                       type="button"
@@ -58,34 +58,59 @@ const Cart = () => {
                 </div>
               </div>
             </li>
+            
               ))}
           </ul>
 
-          {test.cartList.length > 0 &&
-                        <div className="limpiarSeguir">
-                            <button
-                              type="button"
-                              className="botonLimpiar"
-                              onClick={() => test.clearCart()}
-                            >
-                              Limpiar carrito
-                            </button>
+          <div className="resumenCompra">
+            <div>
+              <p className="tituloResumen">Subtotal de la Compra</p>
+              <p className="importe"> Importe acumulado: $ {subtotal}</p>
+            </div>
+            <p className="noIncluye">*** No incluye costos de envío. ***</p>
+            <div className="delBoton">
+              {test.cartList.length === 0 ?
+              <Link to='/'>
+                <button className="botonFinal">
+                Empezar la compra
+                </button></Link>
+              :
+              <Link to='/checkout'>
+                <button className="botonFinal">
+                Finalizar compra
+                </button>
+              </Link>
+              }
+            </div>
+          </div>
 
-                            <Link to='/'>
-                              <button
-                                type="button"
-                                className="botonSeguirCompra"
-                                onClick={() => setOpen(false)}
-                              >
-                                Continuar comprando
-                                <span aria-hidden="true"> &rarr;</span>
-                              </button>
-                            </Link>
-                        </div>
-                      }
         </div>
-    </>
-    )   
+
+            {test.cartList.length > 0 &&
+            <div className="limpiarSeguir">
+              <button
+                type="button"
+                className="botonLimpiar"
+                  onClick={() => test.clearCart()}
+              >
+                Limpiar carrito
+              </button>
+
+              <Link to='/'>
+                <button
+                  type="button"
+                  className="botonSeguirCompra"
+                  onClick={() => setOpen(false)}
+                >
+                  Continuar comprando
+                  <span aria-hidden="true"> &rarr;</span>
+                </button>
+              </Link>
+            </div>
+            }
+        </div>
+        </>
+    )
 }
 
 export default Cart;

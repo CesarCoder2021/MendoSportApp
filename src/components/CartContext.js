@@ -6,6 +6,16 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState ([]);
 
+    let cantidadInicial = 0;
+    let cantidad = cartList.reduce (function (acumulador, curValue){
+        return acumulador + curValue.quantity 
+    }, cantidadInicial)
+
+    let subtotalInicial = 0;
+    let subtotal = cartList.reduce(function (acumulador, curValue) {
+        return acumulador + (Number(curValue.cost)*curValue.quantity)
+    }, subtotalInicial)
+
     const addItem = (props, quantity) => {
         const itemForCart ={
             ...props, quantity
@@ -34,7 +44,7 @@ const CartContextProvider = ({children}) => {
       }
 
     return (
-        <CartContext.Provider value={{cartList, addItem, removeItem, clearCart}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem, clearCart, subtotal, cantidad}}>
             {children}
         </CartContext.Provider>
     );

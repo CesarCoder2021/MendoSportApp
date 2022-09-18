@@ -20,7 +20,7 @@ const NavBar = ({ background }) => {
           </ul>
         </nav>
 
-        <CartWidget />
+      <CartWidget />
 
       </div>
     </header>

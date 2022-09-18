@@ -8,6 +8,7 @@ import CartContextProvider from './components/CartContext.js';
 import './components/css/style.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart.js';
+import CheckOut from "./components/CheckOut.js";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/category/:id" element={<ItemListContainer />}></Route>
         <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/checkout" element={<CheckOut/>}></Route>
       </Routes>
       <Footer />
     </ BrowserRouter>
