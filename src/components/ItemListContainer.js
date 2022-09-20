@@ -1,9 +1,8 @@
 import {useState, useEffect} from "react";
-import desafio from "../utils/promesa.js";
-import productos from "../utils/productos.js";
 import ItemList from "./ItemList.js";
 import "./css/itemListContainer.css"
 import { useParams } from "react-router-dom";
+import { fireStoreFetch } from "../utils/firebaseConfig.js";
 
 function ItemListContainer(props) {
 
@@ -11,16 +10,9 @@ function ItemListContainer(props) {
   const { id } = useParams ();
 
   useEffect(() => {
-    if (id) {
-      desafio(productos.filter (item => item.categoryId === id))
-        .then(result => setProducts(result))
-        .catch(err => console.log(err))      
-    } else {
-      desafio(productos)
-        .then(result => setProducts(result))
-        .catch(err => console.log(err))
-    }
-  }, [id])
+    fireStoreFetch(id)
+    .then (result => setProducts(result))
+  }, [id]);
 
   return (
     <div>
