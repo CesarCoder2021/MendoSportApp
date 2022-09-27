@@ -1,20 +1,51 @@
-# Proyecto de Frontend e-commerce
-Proyecto relacionado al curso de ReactJS de Codehouse.
-El curso es parte de la Carrera de Desarrollo Frontend ReactJs.
 
-# Desarrollador
-Cesar Italo Varettoni
-Portfolio: https://portfoliocesar01.netlify.app/
+# MENDOSPORT app
 
-# Inicio
--Instalar dependencias para el cliente
-npm install
--Correr la app
-npm start
+Proyecto de construcción de un e-commerce de productos deportivos vinculados al baloncesto.
+(Tiene el objetivo de cumplir con los requerimientos del curso de REACT JS de la Carrera de Desarrollo Web de Coderhouse).
 
-# Tecnologías utilizadas
-React
-React Router Dom
+https://vercel.com/cesarcoder2021/mendo-sport-app
 
-# Estado del Proyecto
-En construcción
+## Autor
+
+- [@CesarCoder2021](https://github.com/CesarCoder2021)
+Cesar Italo Varettoni (Mendoza - Argentina)
+
+## Tecnologías utilizadas
+
+**Client:** React, HTML, CSS, JavaScript
+
+**Server:** Node
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+## 🚀 About Me
+Desarrollador web Jr.
+Manejo de tecnologías: HTML, CSS, JAVASCRIPT, REACT.
+Amplio recorrido laboral.
+
+
+
+## Installation
+
+Install MendoSportApp with npm
+
+```bash
+  npm install proyectotienda_reactjs
+  cd proyectotienda_reactjs
+```
+    
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://portfoliocesar01.netlify.app)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cesar-varettoni-bayton-hr/)
+
+
+## Agradecimientos
+
+Un agradecimiento especial para el Profesor Alex Marín Mendez, a mi tutora y a la gente de Coderhouse que pone a disposición el conocimiento para todos los que queremos subirnos al tren de la programación.
+
+Un cariño especial para mi esposa, Marcela Palpacelli, por soportar largas horas de programación, clases y prácticas. 

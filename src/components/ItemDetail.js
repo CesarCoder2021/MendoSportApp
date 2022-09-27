@@ -1,8 +1,6 @@
-// import {useState} from 'react'
 import ItemCountDetail from "./ItemCountDetail";
 import React from "react";
 import "./css/itemDetail.css";
-// import { Link } from "react-router-dom";
 
 function ItemDetail(props) {
 

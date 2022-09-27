@@ -16,9 +16,8 @@ const App = () => {
 
     <BrowserRouter>
       <NavBar />
-      <Carrousell />
       <Routes>
-        <Route path="/" element={<ItemListContainer />}></Route>
+        <Route path="/" element={<><Carrousell /><ItemListContainer /></>}></Route>
         <Route path="/category/:id" element={<ItemListContainer />}></Route>
         <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
         <Route path="/cart" element={<Cart />}></Route>

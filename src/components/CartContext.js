@@ -7,13 +7,13 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState ([]);
 
     let cantidadInicial = 0;
-    let cantidad = cartList.reduce (function (acumulador, curValue){
-        return acumulador + curValue.quantity 
+    let cantidad = cartList.reduce (function (acumulador, prodValor){
+        return acumulador + prodValor.quantity 
     }, cantidadInicial)
 
     let subtotalInicial = 0;
-    let subtotal = cartList.reduce(function (acumulador, curValue) {
-        return acumulador + (Number(curValue.cost)*curValue.quantity)
+    let subtotal = cartList.reduce(function (acumulador, prodValor) {
+        return acumulador + (Number(prodValor.cost)*prodValor.quantity)
     }, subtotalInicial)
 
     const addItem = (props, quantity) => {
@@ -23,15 +23,16 @@ const CartContextProvider = ({children}) => {
         if (cartList.filter(elemento => elemento.id === props.id).length === 0) {
         setCartList([...cartList, itemForCart])
         } else {
-            let temporal = cartList.map((elemento) => {
+            let temporal = 0;
+            temporal = cartList.map((elemento) => {
             if (elemento.id !== props.id) {
                 return elemento
             } else {
-                return props 
+                return props
             }
             })
             setCartList (temporal)
-            alert ("Ya compró este producto");
+            alert ("Ya compró este producto. No se sumará a su compra");
         }
     }
 

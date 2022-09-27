@@ -1,32 +1,77 @@
-// import ItemCount from "./ItemCount";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import {CartContext} from "./CartContext";
 import "../components/css/checkout.css";
+import { serverTimestamp, increment, updateDoc, doc, setDoc, collection } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { db } from "../utils/firebaseConfig.js";
 
 export default function CheckOut() {
 
-  const test = useContext(CartContext);
-  let subtotal = test.subtotal;
+  const navigate = useNavigate();
+  const cartContext = useContext(CartContext);
+  let subtotal = cartContext.subtotal;
   const [finCompra, setFinCompra] = useState(false)
+  const [name, setName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
 
-  useEffect(() => {
-    if(finCompra===true){
-      test.clearCart();
-    }
-  }, [finCompra, test])
-
-  function sendForm(event) {
+  const createOrder = (event) => {
     event.preventDefault()
-    alert('¡Su pedido se ha enviado con éxito!');
-    setFinCompra(true)
-  }
 
+    if (name && lastName && email && phone) {
+      let itemsForDB = cartContext.cartList.map(item => ({
+        id: item.id,
+        title: item.name,
+        price: item.cost,
+        quantity: item.quantity
+      }))
+      let order = {
+        buyer: {
+          name: name,
+          lastName: lastName,
+          email: email,
+          phone: phone
+        },
+        date: serverTimestamp(),
+        items: itemsForDB,
+        total: "$ " + cartContext.subtotal
+      }
+
+      const createOrderInFirebase = async () => {
+        let newOrderRef = doc(collection(db, 'ordenesMS'))
+        await setDoc(newOrderRef, order)
+        return newOrderRef
+      }
+
+      createOrderInFirebase()
+        .then(result => {
+          alert('Su orden se ha creado con éxito con la siguiente ID#:\n\n' + result.id)
+          
+          cartContext.cartList.forEach(async (item) => {
+            const itemRef = doc(db, "productosMS", item.id);
+            await updateDoc(itemRef, {
+              stock: increment(-item.quantity)
+            });
+          })
+          cartContext.clearCart();
+        })
+        .catch(err => console.log(err))
+
+      setTimeout(() => {
+        navigate("/");
+      }, "5000")
+    } else {
+      alert("Por favor completa todos los campos del formulario")
+    }
+
+  }
 
   return (
     <>
       {!finCompra ?
         <div className="checkFondo">
-          {/* Formulario de Contacto */}
+
           <div>
             <div>
               <div className="notaDePedido">
@@ -35,14 +80,13 @@ export default function CheckOut() {
                     <div>
                       <div className="notaDePedido__titulo">NOTA DE PEDIDO</div>
 
-                      {/* Ingreso de Datos personales */}
-
                       <div className="notaDePedido__formData">
                         <div className="notaDePedido__formData-input">
                           <label className="notaDePedido__formData-etiqueta">
                             Nombre
                           </label>
                           <input
+                            onChange={(event) => setName(event.target.value)}
                             placeholder="Introduzca aquí su nombre"
                             required
                             type="text"
@@ -57,6 +101,7 @@ export default function CheckOut() {
                             Apellido
                           </label>
                           <input
+                            onChange={(event) => setLastName(event.target.value)}
                             placeholder="Introduzca aquí su apellido"
                             required
                             type="text"
@@ -71,6 +116,7 @@ export default function CheckOut() {
                             Email
                           </label>
                           <input
+                            onChange={(event) => setEmail(event.target.value)}
                             placeholder="xxx@xxx.xxx"
                             required
                             type="text"
@@ -85,6 +131,7 @@ export default function CheckOut() {
                             Teléfono
                           </label>
                           <input
+                            onChange={(event) => setPhone(event.target.value)}
                             placeholder="xxxxxxxx - solo números"
                             pattern="[0-9]"
                             required
@@ -102,7 +149,7 @@ export default function CheckOut() {
                             Detalle de productos incluídos en el pedido
                           </label>
                           <ul>
-                            {test.cartList.map((item) => (
+                            {cartContext.cartList.map((item) => (
                               <li key={item.id}
                                 >{item.quantity} x {item.name}.
                               </li>
@@ -124,7 +171,7 @@ export default function CheckOut() {
                               <div>
                                 <button
                                   className="botonEnviarPedido"
-                                  onClick={sendForm}
+                                  onClick={createOrder}
                                   type="submit"
                                 >
                                 Enviar pedido
@@ -140,13 +187,12 @@ export default function CheckOut() {
             </div>
           </div>
 
-          {/* Carrito */}
           <div>
             <div>
               <div>
                 <h2 className="pedidoModifico">Podés modificar aquí tu pedido</h2>
                 <ul>
-                  {test.cartList.map((item) => (
+                  {cartContext.cartList.map((item) => (
                     <li className="lineaProductoPedido" key={item.id}>
                       <div>
                         <img width={100}
@@ -162,7 +208,6 @@ export default function CheckOut() {
                           
                       <div>
                         <p>Cantidad {item.quantity}</p>
-                        {/* <ItemCount item={item}></ItemCount> */}
                       </div>
                       
                       <div>
@@ -170,7 +215,7 @@ export default function CheckOut() {
                           className="botonQuitarPedido"
                           type="button"
                           onClick={() => {
-                            test.removeItem(item.id)
+                            cartContext.removeItem(item.id)
                           }}
                         >
                           Quitar
@@ -188,7 +233,7 @@ export default function CheckOut() {
 
         :
         <>
-          <p className="avisoFinal">¡Su pedido se ha enviado con éxito!</p>
+          <p className="avisoFinal">¡Su orden se ha creado con éxito!</p>
           <p className="avisoFinal__bajada">Nos pondremos en contacto con usted para coordinar la entrega y formas de pago. Muchas gracias!</p>
         </>
       }

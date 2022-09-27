@@ -1,5 +1,7 @@
 /* Estilos del navbar */
-
+#root {
+  background-color: white;
+}
 .header {
     position: absolute;
     width: 100%;

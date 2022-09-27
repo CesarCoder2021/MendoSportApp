@@ -16,7 +16,8 @@ function Item(props) {
           <div>
             <h3>{props.name}</h3>
           </div>
-          <p>$ {props.cost}</p>
+          <p>Quedan solo {props.stock} unidades!</p>
+          <p><strong>$ {props.cost}</strong></p>
         </div>
       </div>
       <div>

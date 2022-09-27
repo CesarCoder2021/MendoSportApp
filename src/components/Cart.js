@@ -91,7 +91,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="botonLimpiar"
-                  onClick={() => test.clearCart()}
+                  onClick={() => CartContext.clearCart()}
               >
                 Limpiar carrito
               </button>
