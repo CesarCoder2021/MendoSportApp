@@ -2,6 +2,7 @@ import {useContext, useEffect, useState} from "react";
 import "./css/itemCount.css"
 import {Link} from "react-router-dom";
 import { CartContext } from "./CartContext";
+import Swal from "sweetalert2";
 
 function ItemCountDetail(props) {
   
@@ -17,7 +18,14 @@ function ItemCountDetail(props) {
     if(count !== props.min) {
       setCount(count-1)
     } else {
-      alert(`¡No puedes agregar menos de ${props.min} unidad!`);
+
+      Swal.fire({
+        title: 'CUIDADO!',
+        text: (`¡No puedes agregar menos de ${props.min} unidad!`) ,
+        icon: "error",
+        confirmButtonText: 'OK'
+      })
+
     } 
   }
 
@@ -25,12 +33,22 @@ function ItemCountDetail(props) {
     if(count !== props.stock) {
       setCount(count+1)
     } else {
-      alert(`¡No puedes agregar más de ${props.stock} unidades!`);
+      Swal.fire({
+        title: 'CUIDADO!',
+        text: (`¡No puedes agregar más de ${props.stock} unidades!`) ,
+        icon: "error",
+        confirmButtonText: 'OK'
+      })
     }
   }
 
   function onAdd() {
-    alert(`¡Se agregaron al carrito ${count} unidades!`)
+    Swal.fire({
+      title: 'Excelente!',
+      text: (`¡Se agregaron al carrito ${count} unidades!`) ,
+      icon: "success",
+      confirmButtonText: 'OK'
+    })
     setCompra(true);
     test.addItem (props.item, count);
   }

@@ -4,6 +4,7 @@ import "../components/css/checkout.css";
 import { serverTimestamp, increment, updateDoc, doc, setDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { db } from "../utils/firebaseConfig.js";
+import Swal from "sweetalert2";
 
 export default function CheckOut() {
 
@@ -46,8 +47,14 @@ export default function CheckOut() {
 
       createOrderInFirebase()
         .then(result => {
-          alert('Su orden se ha creado con éxito con la siguiente ID#:\n\n' + result.id)
-          
+
+          Swal.fire({
+            title: 'Compra finalizada!',
+            text: 'Su orden fue creada con el siguiente código: \n \n' + result.id,
+            icon: "success",
+            confirmButtonText: 'OK'
+          })
+
           cartContext.cartList.forEach(async (item) => {
             const itemRef = doc(db, "productosMS", item.id);
             await updateDoc(itemRef, {
@@ -62,7 +69,13 @@ export default function CheckOut() {
         navigate("/");
       }, "5000")
     } else {
-      alert("Por favor completa todos los campos del formulario")
+
+      Swal.fire({
+        title: 'Faltan datos',
+        text: "Debe completar todos los datos del formulario.",
+        icon: "error",
+        confirmButtonText: 'OK'
+      })
     }
 
   }

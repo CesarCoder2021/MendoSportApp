@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -32,7 +33,13 @@ const CartContextProvider = ({children}) => {
             }
             })
             setCartList (temporal)
-            alert ("Ya compró este producto. No se sumará a su compra");
+
+            Swal.fire({
+                title: 'Este producto ya fue comprado',
+                text: 'No se agregará al carrito de compras',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
         }
     }
 

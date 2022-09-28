@@ -1,5 +1,5 @@
 .carrito {
-    width: 100%;
+    width: 98.67%;
     min-height: 100vh;
     background-color: white;
     display: flex;
@@ -16,6 +16,7 @@
     border-radius: 4px;
     margin-top: 2rem;
     margin-bottom: 2 rem;
+    cursor: pointer;
 }
 .carritoVacio {
     text-align: center;
@@ -83,6 +84,7 @@
     border-radius: 4px;
     color: white;
     font-weight: 500;
+    cursor: pointer;
 }
 
 /* Estilo Resumen Compra */
@@ -124,6 +126,7 @@
     font-size: 1rem;
     text-align: center;
     margin: 2rem 0 0 0;
+    cursor: pointer;
 }
 
 /* Estilo Botones Finales */
@@ -136,6 +139,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 2rem;
+    cursor: pointer;
 }
 
 .botonLimpiar {
@@ -147,6 +151,7 @@
     font-weight: 700;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 .botonSeguirCompra {
     width: 12rem;
@@ -157,4 +162,5 @@
     font-weight: 500;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }

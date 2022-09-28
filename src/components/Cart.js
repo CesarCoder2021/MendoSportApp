@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
 import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../components/css/cart.css";
 
 const Cart = () => {
@@ -8,6 +9,14 @@ const Cart = () => {
     const test = useContext(CartContext);
     const [open, setOpen] = useState(true);
     let subtotal = test.subtotal;
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (open === false) {
+        navigate ("/");
+      }      
+    }, [open]
+    );
 
     return (
     <>
@@ -43,7 +52,8 @@ const Cart = () => {
                 <p>${item.cost}</p>
                 <div className="qtyQuitar">
                   <p className="cantidad">Cantidad {item.quantity}</p>
-
+                  <div>
+                  </div>
                   <div>
                     <button
                       type="button"
@@ -91,7 +101,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="botonLimpiar"
-                  onClick={() => CartContext.clearCart()}
+                  onClick={() => test.clearCart()}
               >
                 Limpiar carrito
               </button>

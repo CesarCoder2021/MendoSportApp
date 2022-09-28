@@ -1,9 +1,13 @@
+#html {
+  width: 100%;
+}
 /* Estilos del navbar */
 #root {
   background-color: white;
+  width: 100%;
 }
 .header {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
   }
   .header-container {
