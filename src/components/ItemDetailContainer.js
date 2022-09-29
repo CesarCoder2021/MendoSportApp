@@ -16,9 +16,10 @@ function ItemDetailContainer() {
   }, [id]);
 
   return (
-    oneProduct ? <ItemDetail item={oneProduct}/> :
+    oneProduct 
+    ? <ItemDetail item={oneProduct}/> 
+    :
       <div>
-        <div></div>
         <p className="cargando">Cargando ... </p>
       </div>
   );

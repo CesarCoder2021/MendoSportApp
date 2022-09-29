@@ -80,7 +80,7 @@ const Cart = () => {
             <p className="noIncluye">*** No incluye costos de envío. ***</p>
             <div className="delBoton">
               {test.cartList.length === 0 ?
-              <Link to='/'>
+              <Link to='/list'>
                 <button className="botonFinal">
                 Empezar la compra
                 </button></Link>
@@ -106,7 +106,7 @@ const Cart = () => {
                 Limpiar carrito
               </button>
 
-              <Link to='/'>
+              <Link to='/list'>
                 <button
                   type="button"
                   className="botonSeguirCompra"

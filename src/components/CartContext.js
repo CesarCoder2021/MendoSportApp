@@ -23,16 +23,13 @@ const CartContextProvider = ({children}) => {
         }
         if (cartList.filter(elemento => elemento.id === props.id).length === 0) {
         setCartList([...cartList, itemForCart])
-        } else {
-            let temporal = 0;
+        } else 
+        
+        {   let temporal = 0;
             temporal = cartList.map((elemento) => {
             if (elemento.id !== props.id) {
                 return elemento
-            } else {
-                return props
-            }
-            })
-            setCartList (temporal)
+            }})
 
             Swal.fire({
                 title: 'Este producto ya fue comprado',
