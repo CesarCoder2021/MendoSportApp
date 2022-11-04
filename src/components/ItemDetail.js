@@ -1,4 +1,3 @@
-import ItemCountDetail from "./ItemCountDetail";
 import React from "react";
 import "./css/itemDetail.css";
 
@@ -29,17 +28,6 @@ function ItemDetail(props) {
             <div>
               <h3>Precio</h3>
               <p>{props.item.cost}</p>
-            
-              <div>
-                <div>
-                    <ItemCountDetail 
-                    item={props.item}
-                    stock={props.item.stock} 
-                    min={props.item.initial} 
-                    />
-                </div>
-
-            </div>
 
             </div>
           </div>

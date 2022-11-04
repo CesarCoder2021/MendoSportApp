@@ -9,17 +9,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
 }
 .tituloHead {
     color: white;
     font-size: 2.5rem;
-    text-align: end;
-    padding: 8rem 2rem 0 0;
+    text-align: center;
+    padding: 4rem 2rem 0 0;
 }
 .botonHead {
     margin: 0 4rem 10rem 0;
-    width: 10rem;
+    width: 15rem;
     height: 2rem;
     background-color: #C73b0b;
     border: none;
@@ -28,4 +28,22 @@
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
+    margin: 2rem 0 2rem 0;
 }
+.ingreso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ingresoDni {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputDni {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
